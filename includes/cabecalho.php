@@ -14,14 +14,4 @@
     <!-- meu estilo.css -->
 </head>
 
-<body>
-    <header>
-        <center>
-            <a href="#">
-                <img style="width:50px;" src="" width="150">
-            </a>
-        </center>
-    </header>
-</body>
-
 </html>
