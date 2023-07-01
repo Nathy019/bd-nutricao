@@ -10,8 +10,8 @@ include "../includes/conexao.php";
     <a href="novo.php"> Adicionar um novo contato</a>
 </p>
 <h2>Listagem contato</h2>
-<table border="1">
-    <tr>
+<table class="table table-bordered border-dark">
+    <tr class="table-dark">
         <td>Código</td>
         <td>Nome</td>
         <td>Cidade</td>
@@ -19,7 +19,7 @@ include "../includes/conexao.php";
         <td>Peso</td>
         <td>Altura</td>
         <td>Data de Nascimeto</td>
-        <td>Data da ultima conlsulta</td>
+        <td>Data da ultima consulta</td>
     </tr>
     <?php
     $sql = "select * from t_cliente";
@@ -33,15 +33,15 @@ include "../includes/conexao.php";
             <td><?php echo $um_cliente['estado']; ?></td>
             <td><?php echo $um_cliente['peso']; ?></td>
             <td><?php echo $um_cliente['altura']; ?></td>
-            <td><?php echo $um_cliente['data_nascimento']; ?></td>
-            <td><?php echo $um_cliente['data_ultima_consulta']; ?></td>
+            <td><?php echo date('d/m/Y',strtotime ($um_cliente['data_nascimento'])); ?></td>
+            <td><?php echo date('d/m/Y',strtotime ($um_cliente['data_ultima_consulta'])); ?></td>
             <!-- add foto img src="php echo +variavel [nome do campo]"
         img src="php $um_portifolio[foto1];php "whidth = "100" "
         -->
             <td>
-                <a href="visualizar.php?codigo=<?php echo $um_cliente['codigo'] ?>">Visualizar</a>
-                <a href="editar.php?codigo=<?php echo $um_cliente['codigo']?>">editar</a>
-                <a href="deletar.php?codigo=<?php echo $um_cliente['codigo']?>">excluir</a>
+                <a class="me-2" href="visualizar.php?codigo=<?php echo $um_cliente['codigo'] ?>"><img src="../imagem/icon_visualizar.png" width="25px"></a>
+                <a class="me-2" href="editar.php?codigo=<?php echo $um_cliente['codigo'] ?>"><img src="../imagem/icon_edit.png" width="25px"></a>
+                <a class="me-2" href="deletar.php?codigo=<?php echo $um_cliente['codigo'] ?>"><img src="../imagem/icon_delet.png" width="25px"></a>
             </td>
         </tr>
     <?php
@@ -49,9 +49,6 @@ include "../includes/conexao.php";
     ?>
 </table>
 
-
 <?php
-
-mysqli_close($conexao);
 include "../includes/rodape.php";
 ?>

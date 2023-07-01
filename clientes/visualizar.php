@@ -28,16 +28,30 @@ endwhile
 ?>
 
 <h2>Ficha cliente</h2>
+<table class="table">
+    <thead>
+        <th class="bg-secondary-subtle">Nome:</th>
+        <th class="bg-secondary-subtle">Cidade:</th>
+        <th class="bg-secondary-subtle">Estado:</th>
+        <th class="bg-secondary-subtle">Peso:</th>
+        <th class="bg-secondary-subtle">Altura:</th>
+        <th class="bg-secondary-subtle">Data de nascimento:</th>
+        <th class="bg-secondary-subtle">Data da ultima consulta:</th>
+    </thead>
 
-Nome: <?php echo $nome ?><br>
-Cidade:<?php echo $cidade ?> <br>
-Estado: <?php echo $estado ?><br>
-Peso:<?php echo $peso ?> <br>
-Altura:<?php echo $altura ?> <br>
-Data de nascimento:<?php echo $data_nascimento ?> <br>
-Data da ultima conlsulta:<?php echo $data_ultima_consulta ?> <br>
+    <tbody class="border-dark">
+    <td><?php echo $nome ?></td>
+    <td><?php echo $cidade ?> <br></td>
+    <td><?php echo $estado ?><br></td>
+    <td><?php echo $peso ?> <br></td>
+    <td><?php echo $altura ?> <br></td>
+    <td><?php echo date('d/m/Y',strtotime ('data_nacimento')); ?> <br></td>
+    <td><?php echo date('d/m/Y',strtotime ('data_ultima_consulta')); ?></td>
+
+    </tbody>
+    
+</table>
 <?php
 mysqli_close($conexao);
 include "../includes/rodape.php";
-
 ?>
