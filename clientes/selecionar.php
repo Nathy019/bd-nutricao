@@ -7,7 +7,7 @@ include "../includes/conexao.php";
 
 <h1>Módolo de contatos</h1>
 <p>
-    <a href="novo.php"> Adicionar um novo contato</a>
+    <a href="novo.php"> <img src="../imagem/icon_add.png" width="50px "></a>
 </p>
 <h2>Listagem contato</h2>
 <table class="table table-bordered border-dark">
